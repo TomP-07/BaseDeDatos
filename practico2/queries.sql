@@ -13,4 +13,4 @@ SELECT Name, Region, SurfaceArea, GovernmentForm FROM country ORDER BY SurfaceAr
 SELECT Name FROM country WHERE IndepYear IS NULL;
 
 -- Liste el nombre y el porcentaje de hablantes que tienen todos los idiomas declarados oficiales.
-SELECT Language, Percentage FROM countrylanguage lang WHERE lang.IsOfficial LIKE "T";
+SELECT Language, Percentage FROM countrylanguage AS lang WHERE lang.IsOfficial LIKE "T";
