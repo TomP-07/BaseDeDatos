@@ -1,0 +1,8 @@
+// Levantar todos los contenedores en el archivo docker-compose:
+docker compose up -d
+
+// Tirar todos los contenedores en el archivo docker-compose:
+docker compose down
+
+// Meterte via bash dentro del contenedor de mongo
+docker compose exec mongo bash
