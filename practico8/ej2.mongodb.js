@@ -14,12 +14,11 @@ db.theaters.aggregate([
       },
   },
   {
-    $sort:
-      /**
-       * Provide any number of field/order pairs.
-       */
-      {
-        count: -1,
+    $match: {
+      count: {
+        $gte: 2,
       },
+    },
   },
+  { $count: "total" },
 ]);

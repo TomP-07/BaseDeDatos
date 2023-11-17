@@ -1,5 +1,6 @@
 use("mflix");
-db.theaters.aggregate([
+
+db.comments.aggregate([
   {
     $group:
       /**
@@ -7,8 +8,11 @@ db.theaters.aggregate([
        * fieldN: The first field name.
        */
       {
-        _id: "$location.address.state",
-        count: {
+        _id: "$email",
+        name: {
+          $first: "$name",
+        },
+        comments: {
           $sum: 1,
         },
       },
@@ -19,7 +23,7 @@ db.theaters.aggregate([
        * Provide any number of field/order pairs.
        */
       {
-        count: -1,
+        comments: -1,
       },
   },
 ]);
